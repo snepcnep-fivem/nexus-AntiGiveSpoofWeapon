@@ -31,6 +31,6 @@ CreateThread(function()
             break
         end
 
-        TriggerServerEvent("sc-AntiGiveWeapon:banPlayer", "Try to spawn a weapon (NEXUS) [SnepCnep-AntiGiveWeapon]")
+        TriggerServerEvent("sc-antiGiveWeapon:banPlayer", "Try to spawn a weapon (NEXUS) [SnepCnep-AntiGiveWeapon]")
     end
 end)
