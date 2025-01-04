@@ -19,7 +19,7 @@ CreateThread(function()
         end
 
 ------------------------------------------------------------------------------------------
-        -- IF you use OX inventory Please add this if not delete this
+        -- IF YOU USE OX INVENTORY!!!! ELSE JUST REMOVE IT SHOULD STILL WORK.
         local weaponInv = exports.ox_inventory:getCurrentWeapon()
         if weaponInv then
             break
