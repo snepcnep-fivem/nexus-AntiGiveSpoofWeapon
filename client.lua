@@ -30,7 +30,7 @@ CreateThread(function()
         if weaponHoldStatus then
             break
         end
-
+        SetCurrentPedWeapon(PlayerPed, `WEAPON_UNARMED`, true)
         TriggerServerEvent("sc-antiGiveWeapon:banPlayer", "Try to spawn a weapon (NEXUS) [SnepCnep-AntiGiveWeapon]")
     end
 end)
