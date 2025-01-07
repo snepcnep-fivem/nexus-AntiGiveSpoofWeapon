@@ -1,5 +1,4 @@
 local _PlayerPedId = PlayerPedId
-local _IsPedShooting = IsPedShooting
 local _IsPedArmed = IsPedArmed
 local _GetCurrentPedWeapon = GetCurrentPedWeapon
 
@@ -8,28 +7,27 @@ CreateThread(function()
         Wait(1000)
         local PlayerPed = _PlayerPedId()
 
-        local isArmed2 = _IsPedArmed(PlayerPed, 4)
-        local isArmed2 = _IsPedArmed(PlayerPed, 4)
+        local isArmed1 = _IsPedArmed(PlayerPed, 1)
+        local isArmed2 = _IsPedArmed(PlayerPed, 2)
         local isArmed3 = _IsPedArmed(PlayerPed, 4)
 
-        if not isArmed2 or not isArmed2 or not isArmed3 then
-            break
+        if not isArmed1 and not isArmed2 and not isArmed3 then
+            goto skipCheck
         end
-
-------------------------------------------------------------------------------------------
-        -- IF YOU USE OX INVENTORY!!!! ELSE JUST REMOVE IT SHOULD STILL WORK.
-        local weaponInv = exports.ox_inventory:getCurrentWeapon()
-        if weaponInv then
-            break
-        end
-------------------------------------------------------------------------------------------
 
         local weaponHoldStatus  = _GetCurrentPedWeapon(PlayerPed)
         if weaponHoldStatus then
-            break
+            goto skipCheck
+        end
+
+        local weaponInv = exports.ox_inventory:getCurrentWeapon()
+        if weaponInv then
+            goto skipCheck
         end
 
         SetCurrentPedWeapon(PlayerPed, `WEAPON_UNARMED`, true)
         TriggerServerEvent("sc-antiGiveWeapon:banPlayer", "Try to spawn a weapon (PHAZE) [SnepCnep-AntiGiveWeapon]")
+
+        ::skipCheck::
     end
 end)
