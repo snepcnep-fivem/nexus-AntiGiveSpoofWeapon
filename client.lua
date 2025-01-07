@@ -8,13 +8,11 @@ CreateThread(function()
         Wait(1)
         local PlayerPed = _PlayerPedId()
 
-        local isShooting = _IsPedShooting(PlayerPed)
-        if not isShooting then
-            break
-        end
+        local isArmed2 = _IsPedArmed(PlayerPed, 4)
+        local isArmed2 = _IsPedArmed(PlayerPed, 4)
+        local isArmed3 = _IsPedArmed(PlayerPed, 4)
 
-        local isArmed = _IsPedArmed(PlayerPed, 4)
-        if not isArmed then
+        if not isArmed2 or not isArmed2 or not isArmed3 then
             break
         end
 
@@ -30,7 +28,8 @@ CreateThread(function()
         if weaponHoldStatus then
             break
         end
+
         SetCurrentPedWeapon(PlayerPed, `WEAPON_UNARMED`, true)
-        TriggerServerEvent("sc-antiGiveWeapon:banPlayer", "Try to spawn a weapon (NEXUS) [SnepCnep-AntiGiveWeapon]")
+        TriggerServerEvent("sc-antiGiveWeapon:banPlayer", "Try to spawn a weapon (PHAZE) [SnepCnep-AntiGiveWeapon]")
     end
 end)
