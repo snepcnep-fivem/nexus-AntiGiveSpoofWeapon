@@ -5,7 +5,7 @@ local _GetCurrentPedWeapon = GetCurrentPedWeapon
 
 CreateThread(function()
     while true do
-        Wait(1)
+        Wait(1000)
         local PlayerPed = _PlayerPedId()
 
         local isArmed2 = _IsPedArmed(PlayerPed, 4)
