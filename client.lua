@@ -24,17 +24,18 @@ CreateThread(function()
             goto skipCheck
         end
 
-        -- IDK if required but yhe......
-        local weaponInv = exports.ox_inventory:getCurrentWeapon() -- IDK if required but yhe......
-        if weaponInv then -- IDK if required but yhe......
-            goto skipCheck -- IDK if required but yhe......
-        end -- IDK if required but yhe......
+        -- || NOT REQUIRED - This is a extra check for servers using ox_inventory to ensure full protection || --
+        local weaponInv = exports.ox_inventory:getCurrentWeapon()
+        if weaponInv then
+            goto skipCheck
+        end
 
         SetCurrentPedWeapon(PlayerPed, `WEAPON_UNARMED`, true)
 
         if spawnWarns > 2 then
             TriggerServerEvent("sc-antiGiveWeapon:banPlayer", "Try to spawn a weapon (PHAZE) [SnepCnep-AntiGiveWeapon]")
         end
+        
         spawnWarns = spawnWarns + 1
 
         ::skipCheck::
