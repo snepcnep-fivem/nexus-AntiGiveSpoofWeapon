@@ -2,13 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'SnepCnep'
-description 'Anti Give Spoof Weapon (Nexus/Phaze)'
+description 'Anti-give weapon system for FiveM servers (Phaze/Nexus)'
 version '1.0.0'
 
-client_scripts {
-    'client.lua',
-}
+client_script 'client.lua'
 
-server_scripts {
-    'server.lua',
-}
+server_script 'server.lua'

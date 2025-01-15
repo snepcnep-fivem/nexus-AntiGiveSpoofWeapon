@@ -4,6 +4,10 @@ This project introduces an **Anti-Spoof GiveWeapon** script designed to enhance 
 
 ## Features
 
+- **Prevent unauthorized weapon grants**: Ensures that only legitimate weapon transactions are processed.
+- **Customizable integration**: Easily replace the ban system with your own.
+- **Lightweight and efficient**: Designed to have minimal performance impact on your server.
+- **Last updated**: 15-1-2025 | 22:06
 
 ## Installation
 
